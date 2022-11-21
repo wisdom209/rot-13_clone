@@ -14,10 +14,17 @@ window.onload = function () {
 	var result = document.getElementById('rot_conversion');
 
 	function updateResult() {
-		result.textContent = convert_to_13(textarea.value);
+		result.value = convert_to_13(textarea.value);
 	}
 
 	textarea.addEventListener('keyup', updateResult);
+	
+
+	function updatetextarea() {
+		textarea.value = convert_to_13(result.value);
+	}
+
+	result.addEventListener('keyup', updatetextarea);
 
 }
 
