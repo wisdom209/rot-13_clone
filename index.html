@@ -6,38 +6,25 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Rot 13 Encryption</title>
-	<script src = "./js/index.js"></script>
+	<script src="./js/index.js"></script>
 </head>
 
-<body id="app">
+<body id="app" style="padding: 10px 10px 10px 10px;">
 	<center>
 		<h1>rot13.com</h1>
 	</center>
 	<center><a href="https://en.wikipedia.org/wiki/ROT13">About ROT13</a></center>
-
 	<br />
-
 	<center>
 		<textarea id="rot_initial" name="rot_init" rows="8" cols="50">
-
-	</textarea>
-
-		<br />
-		<br />
-
-
-		<button>rot13</button>
-
-		<br />
-		<br />
-
-		<textarea id="rot_conversion" name="rot_init" rows="8" cols="50">
-
-	</textarea>
-
+		</textarea>
+		<br /><br />
+		<center><button>rot13</button></center>
+		<br /><br />
+		<textarea id="rot_conversion" name="rot_init" rows="8" cols="50" disabled
+			style="background-color: #FFF !important;">
+		</textarea>
 	</center>
-
-
 </body>
 
 </html>
