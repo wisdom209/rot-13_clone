@@ -63,7 +63,6 @@ window.onload = function () {
 		result.value = rot(textarea.value, conversion_index);
 	}
 
-
 	textarea.addEventListener('keyup', updateResult);
 
 	result.addEventListener('keydown', (e) => {
