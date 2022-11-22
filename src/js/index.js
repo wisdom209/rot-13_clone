@@ -46,6 +46,7 @@ window.onload = function () {
 	var textarea = document.getElementById('rot_initial');
 	var result = document.getElementById('rot_conversion');
 	textarea.value = "";
+	result.value = "";
 	dropdown.value = "ROT13";
 
 	dropdown.addEventListener('change', (e) => {
@@ -55,10 +56,9 @@ window.onload = function () {
 
 	function updateResult() {
 		let conversion_index = dropdown.value.substring(3);
-		if(textarea.value == "")
-		{
+
+		if (textarea.value == "")
 			textarea.selectionStart = 0;
-		}
 
 		result.value = rot(textarea.value, conversion_index);
 	}
@@ -67,6 +67,10 @@ window.onload = function () {
 
 	result.addEventListener('keydown', (e) => {
 		e.preventDefault();
+
+		if (result.value == "")
+			result.selectionStart = 0;
+
 		return false;
 	})
 }

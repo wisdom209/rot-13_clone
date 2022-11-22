@@ -9,17 +9,16 @@
 	<script src="./js/index.js"></script>
 </head>
 
-<body id="app"
-	style="display: flex; flex: 1; flex-direction: column; align-items: center;">
+<body id="app" style="display: flex; flex: 1; flex-direction: column; align-items: center;">
 
 	<h1>rot13.com</h1>
 
 
-	<a href="https://en.wikipedia.org/wiki/ROT13">About ROT13</a>
+	<div> <a href="https://en.wikipedia.org/wiki/ROT13">About ROT13</a>
+	</div>
 
-	<br />
 
-	<textarea id="rot_initial" name="rot_init" rows="8" cols="40" autofocus style="width: 80%; margin: 1em">
+	<textarea id="rot_initial" name="rot_init" rows="8" cols="50" autofocus style="width: 80%; margin: 1em">
 		</textarea>
 
 	<big>
@@ -29,35 +28,35 @@
 			</big>
 		</big>
 	</big>
-
-	<select name="rot_encrypt" id="rot_encrypt">
-		<option value="ROT1" id="1">ROT1</option>
-		<option value="ROT2" id="2">ROT2</option>
-		<option value="ROT3" id="3">ROT3</option>
-		<option value="ROT4" id="4">ROT4</option>
-		<option value="ROT5" id="5">ROT5</option>
-		<option value="ROT6" id="6">ROT6</option>
-		<option value="ROT7" id="7">ROT7</option>
-		<option value="ROT8" id="8">ROT8</option>
-		<option value="ROT9" id="9">ROT9</option>
-		<option value="ROT10" id="10">ROT10</option>
-		<option value="ROT11" id="11">ROT11</option>
-		<option value="ROT12" id="12">ROT12</option>
-		<option value="ROT13" id="13">ROT13</option>
-		<option value="ROT14" id="14">ROT14</option>
-		<option value="ROT15" id="15">ROT15</option>
-		<option value="ROT16" id="16">ROT16</option>
-		<option value="ROT17" id="17">ROT17</option>
-		<option value="ROT18" id="18">ROT18</option>
-		<option value="ROT19" id="19">ROT19</option>
-		<option value="ROT20" id="20">ROT20</option>
-		<option value="ROT21" id="21">ROT21</option>
-		<option value="ROT22" id="22">ROT22</option>
-		<option value="ROT23" id="23">ROT23</option>
-		<option value="ROT24" id="24">ROT24</option>
-		<option value="ROT25" id="25">ROT25</option>
-	</select>
-
+	<div style="margin-top: 6px;">
+		<select name="rot_encrypt" id="rot_encrypt">
+			<option value="ROT1" id="1">ROT1</option>
+			<option value="ROT2" id="2">ROT2</option>
+			<option value="ROT3" id="3">ROT3</option>
+			<option value="ROT4" id="4">ROT4</option>
+			<option value="ROT5" id="5">ROT5</option>
+			<option value="ROT6" id="6">ROT6</option>
+			<option value="ROT7" id="7">ROT7</option>
+			<option value="ROT8" id="8">ROT8</option>
+			<option value="ROT9" id="9">ROT9</option>
+			<option value="ROT10" id="10">ROT10</option>
+			<option value="ROT11" id="11">ROT11</option>
+			<option value="ROT12" id="12">ROT12</option>
+			<option value="ROT13" id="13">ROT13</option>
+			<option value="ROT14" id="14">ROT14</option>
+			<option value="ROT15" id="15">ROT15</option>
+			<option value="ROT16" id="16">ROT16</option>
+			<option value="ROT17" id="17">ROT17</option>
+			<option value="ROT18" id="18">ROT18</option>
+			<option value="ROT19" id="19">ROT19</option>
+			<option value="ROT20" id="20">ROT20</option>
+			<option value="ROT21" id="21">ROT21</option>
+			<option value="ROT22" id="22">ROT22</option>
+			<option value="ROT23" id="23">ROT23</option>
+			<option value="ROT24" id="24">ROT24</option>
+			<option value="ROT25" id="25">ROT25</option>
+		</select>
+	</div>
 	<big>
 		<big>
 			<big>
@@ -65,9 +64,8 @@
 			</big>
 		</big>
 	</big>
-
-	<textarea id="rot_conversion" name="rot_init" rows="8" cols="40"
-		style="caret-color: transparent; width: 80%;margin: 1em;">
+	<textarea id="rot_conversion" name="rot_conversion" rows="8" cols="50"
+		style=" width: 80%;margin: 1em;background-color: white; outline-color: black !important;color: black !important; outline-width: 2px !important;caret-color: transparent !important;">
 		</textarea>
 
 </body>
