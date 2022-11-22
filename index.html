@@ -9,18 +9,19 @@
 	<script src="./js/index.js"></script>
 </head>
 
-<body id="app" style="display: flex; flex: 1; flex-direction: column; align-items: center; margin-left: 20%; margin-right: 20%;">
+<body id="app"
+	style="display: flex; flex: 1; flex-direction: column; align-items: center;">
 
 	<h1>rot13.com</h1>
-	
+
 
 	<a href="https://en.wikipedia.org/wiki/ROT13">About ROT13</a>
-	
-	<br/>
 
-	<textarea id="rot_initial" name="rot_init" rows="8" cols="40" autofocus>
+	<br />
+
+	<textarea id="rot_initial" name="rot_init" rows="8" cols="40" autofocus style="width: 80%; margin: 1em">
 		</textarea>
-	 
+
 	<big>
 		<big>
 			<big>
@@ -28,7 +29,7 @@
 			</big>
 		</big>
 	</big>
-	 
+
 	<select name="rot_encrypt" id="rot_encrypt">
 		<option value="ROT1" id="1">ROT1</option>
 		<option value="ROT2" id="2">ROT2</option>
@@ -56,7 +57,7 @@
 		<option value="ROT24" id="24">ROT24</option>
 		<option value="ROT25" id="25">ROT25</option>
 	</select>
-	
+
 	<big>
 		<big>
 			<big>
@@ -64,8 +65,9 @@
 			</big>
 		</big>
 	</big>
-	 
-	<textarea id="rot_conversion" name="rot_init" rows="8" cols="40" style="caret-color: transparent;">
+
+	<textarea id="rot_conversion" name="rot_init" rows="8" cols="40"
+		style="caret-color: transparent; width: 80%;margin: 1em;">
 		</textarea>
 
 </body>
