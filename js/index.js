@@ -1,30 +1,74 @@
-function convert_to_13(str) {
-	let a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	let b = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var regexLowercase = /[a-z]/;
+var regexUppercase = /[A-Z]/;
 
-	let newstring = str;
+var rot = function (string, n) {
+	if (n == null) {
+		// use ROT-13 by default
+		n = 13;
+	}
+	n = Number(n);
+	string = String(string);
+	if (n == 0) {
+		return string;
+	}
+	if (n < 0) { // decode instead of encode
+		n += 26;
+	}
+	var length = string.length; // note: no need to account for astral symbols
+	var index = -1;
+	var result = '';
+	var character;
+	var currentPosition;
+	var shiftedPosition;
+	while (++index < length) {
+		character = string.charAt(index);
+		if (regexLowercase.test(character)) {
+			currentPosition = lowercase.indexOf(character);
+			shiftedPosition = (currentPosition + n) % 26;
+			result += lowercase.charAt(shiftedPosition);
+		} else if (regexUppercase.test(character)) {
+			currentPosition = uppercase.indexOf(character);
+			shiftedPosition = (currentPosition + n) % 26;
+			result += uppercase.charAt(shiftedPosition);
+		} else {
+			result += character;
+		}
+	}
+	return result;
+};
 
-	return newstring.replace(/[a-z]/gi, letter => a[b.indexOf(letter)]);
-
-}
 
 window.onload = function () {
 
+	var dropdown = document.getElementById('rot_encrypt');
 	var textarea = document.getElementById('rot_initial');
 	var result = document.getElementById('rot_conversion');
+	textarea.value = "";
+	dropdown.value = "ROT13";
+
+	dropdown.addEventListener('change', (e) => {
+		let conversion_index = dropdown.value.substring(3);
+		result.value = rot(textarea.value, conversion_index);
+	})
 
 	function updateResult() {
-		result.value = convert_to_13(textarea.value);
+		let conversion_index = dropdown.value.substring(3);
+		if(textarea.value == "")
+		{
+			textarea.selectionStart = 0;
+		}
+
+		result.value = rot(textarea.value, conversion_index);
 	}
+
 
 	textarea.addEventListener('keyup', updateResult);
-	
 
-	function updatetextarea() {
-		textarea.value = convert_to_13(result.value);
-	}
-
-	result.addEventListener('keyup', updatetextarea);
-
+	result.addEventListener('keydown', (e) => {
+		e.preventDefault();
+		return false;
+	})
 }
 
